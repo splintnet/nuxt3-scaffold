@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  release:
+    types: [ released ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+        env:
+          ENV_FILE: ${{ secrets.UI_ENV_FILE }}
+        run: |
+          echo "$ENV_FILE" > .env
+
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          docker build --pull --target runner --tag "ghcr.io/$GITHUB_REPOSITORY/nuxt" ./
+          docker push "ghcr.io/$GITHUB_REPOSITORY/nuxt"
+
+      - name: Copy files
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          source: "ui/.env,ui/docker-compose.yml"
+          target: "/var/www/apps/marelous"
+
+      - name: Rebuild Container
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          script: |
+            echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            cd ${{ secrets.PATH }} && docker-compose pull && docker-compose up -d --remove-orphans
