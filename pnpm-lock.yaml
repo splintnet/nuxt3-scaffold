@@ -32,7 +32,7 @@ dependencies:
     specifier: ^2.0.33
     version: 2.0.33(typescript@5.0.3)(vue@3.2.47)
   swiper:
-    specifier: ^9.0.1
+    specifier: ^9.2.0
     version: 9.2.0
   tailwind-variants:
     specifier: ^0.1.2
@@ -55,10 +55,10 @@ dependencies:
 
 devDependencies:
   '@commitlint/cli':
-    specifier: ^17.4.2
+    specifier: ^17.5.1
     version: 17.5.1
   '@commitlint/config-conventional':
-    specifier: ^17.4.2
+    specifier: ^17.4.4
     version: 17.4.4
   '@kevinmarrec/nuxt-pwa':
     specifier: ^0.17.0
@@ -67,7 +67,7 @@ devDependencies:
     specifier: ^2.5.2
     version: 2.5.2
   '@nuxt/image-edge':
-    specifier: ^1.0.0-28004510.a0dc8e8
+    specifier: 1.0.0-28004510.a0dc8e8
     version: 1.0.0-28004510.a0dc8e8
   '@nuxtjs/eslint-config-typescript':
     specifier: ^12.0.0
@@ -82,7 +82,7 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.0.0
   '@nuxtjs/i18n':
-    specifier: ^8.0.0-beta.10
+    specifier: 8.0.0-beta.10
     version: 8.0.0-beta.10(vue@3.2.47)
   '@nuxtjs/tailwindcss':
     specifier: ^6.6.5
@@ -109,7 +109,7 @@ devDependencies:
     specifier: ^5.57.0
     version: 5.57.0(eslint@8.37.0)(typescript@5.0.3)
   '@vueuse/nuxt':
-    specifier: ^9.12.0
+    specifier: ^9.13.0
     version: 9.13.0(nuxt@3.3.2)(vue@3.2.47)
   autoprefixer:
     specifier: ^10.4.14
@@ -127,22 +127,22 @@ devDependencies:
     specifier: ^3.3.2
     version: 3.3.2(@types/node@18.15.11)(eslint@8.37.0)(typescript@5.0.3)
   nuxt-icon:
-    specifier: ^0.2.10
+    specifier: ^0.2.11
     version: 0.2.11(vue@3.2.47)
   nuxt-simple-robots:
     specifier: ^2.1.1
     version: 2.1.1
   nuxt-simple-sitemap:
-    specifier: ^2.3.1
+    specifier: ^2.4.0
     version: 2.4.0
   postcss:
     specifier: ^8.4.21
     version: 8.4.21
   postcss-import:
-    specifier: ^15.0.1
+    specifier: ^15.1.0
     version: 15.1.0(postcss@8.4.21)
   postcss-nested:
-    specifier: ^6.0.0
+    specifier: ^6.0.1
     version: 6.0.1(postcss@8.4.21)
   postcss-nesting:
     specifier: ^10.2.0
@@ -2181,7 +2181,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.37.0
-      '@types/estree': 1.0.0
+      '@types/estree': 0.0.51
     dev: true
 
   /@types/eslint@8.37.0:
