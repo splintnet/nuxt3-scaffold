@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  nuxt3:
+    image: ghcr.io/splintnet/nuxt3/nuxt
+    env_file: ./.env
+    restart: unless-stopped
+    networks:
+      - nuxt3
+      - traefik
+    labels:
+      - traefik.enable=true
+      - 'traefik.http.routers.nuxt3.rule=Host(`nuxt3.com`,`www.nuxt3.com`)'
+      - traefik.http.routers.nuxt3.tls.certresolver=myhttpchallenge
+      - traefik.http.routers.nuxt3.entrypoints=websecure
+      - traefik.http.routers.nuxt3.tls=true
+      - traefik.http.services.nuxt3.loadbalancer.server.port=3000
+
+  redis:
+    image: redis
+    restart: unless-stopped
+    networks:
+      - nuxt3
+
+networks:
+  nuxt3:
+  traefik:
+    external: true
