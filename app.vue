@@ -1,6 +1,9 @@
 <script setup lang="ts">
+defineRobotMeta();
+
 const { t, locale } = useI18n();
 const appName = t("app_name");
+
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - ${appName}` : appName;

@@ -30,8 +30,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
-          source: "ui/.env,ui/docker-compose.yml"
-          target: "/var/www/apps/marelous"
+          source: ".env,docker-compose.yml"
+          target: "/var/www/apps/nuxt"
 
       - name: Rebuild Container
         uses: appleboy/ssh-action@master

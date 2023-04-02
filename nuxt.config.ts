@@ -5,11 +5,9 @@ export default defineNuxtConfig({
     runtimeConfig: {
         // Keys within public, will be also exposed to the client-side
         public: {
+            siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://example.com",
             gtag: process.env.NUXT_PUBLIC_GTAG || "",
             googleKey: process.env.NUXT_PUBLIC_GOOGLE_KEY || "",
-            contentfulSpace: process.env.NUXT_PUBLIC_CONTENTFUL_SPACE || "",
-            contentfulAccessToken:
-                process.env.NUXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN || "",
             sentryDsn: process.env.NUXT_PUBLIC_SENTRY_DSN || "",
         },
     },
@@ -29,6 +27,7 @@ export default defineNuxtConfig({
         "@nuxt/content",
         "@pinia/nuxt",
         "nuxt-simple-sitemap",
+        "nuxt-simple-robots",
         "@nuxtjs/eslint-module",
         "nuxt-icon",
         "@nuxtjs/i18n",
