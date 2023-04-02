@@ -12,10 +12,10 @@ WORKDIR /application
 # Install NPM Packages
 COPY package.json pnpm-lock.yaml ./
 
-RUN pnpm install --frozen-lockfile
+RUN yarn install
 
 COPY . .
 
-RUN pnpm build
+RUN yarn build
 
 CMD ["pm2-runtime", "ecosystem.config.js"]
