@@ -2,6 +2,13 @@ import { defineNuxtConfig } from "nuxt/config";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    nitro: {
+        compressPublicAssets: true,
+        prerender: {
+            crawlLinks: true,
+        },
+    },
+
     runtimeConfig: {
         // Keys within public, will be also exposed to the client-side
         public: {
@@ -33,6 +40,7 @@ export default defineNuxtConfig({
         "@nuxtjs/i18n",
         "@nuxtjs/google-fonts",
         "@nuxtjs/fontaine",
+        "@kevinmarrec/nuxt-pwa",
     ],
 
     i18n: {
@@ -107,6 +115,7 @@ export default defineNuxtConfig({
 
     tailwindcss: {
         cssPath: "~/assets/css/app.pcss",
+        viewer: false,
     },
 
     googleFonts: {
@@ -114,6 +123,12 @@ export default defineNuxtConfig({
         preconnect: true,
         families: {
             Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+        },
+    },
+
+    pwa: {
+        workbox: {
+            enabled: process.env.NODE_ENV === "production",
         },
     },
 });
