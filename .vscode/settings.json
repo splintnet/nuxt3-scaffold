@@ -1,11 +1,12 @@
 {
-    "prettier.enable": false,
-    "editor.formatOnSave": false,
+    "prettier.enable": true,
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
     },
-    "tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
+    "tailwindCSS.experimental.configFile": "./tailwind.config.js",
     "files.associations": {
         "*.css": "tailwindcss"
-    }
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
