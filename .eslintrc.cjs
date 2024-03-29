@@ -4,11 +4,11 @@ module.exports = {
         browser: true,
         node: true,
     },
-    parser: 'vue-eslint-parser',
+    parser: "vue-eslint-parser",
     parserOptions: {
-        parser: '@typescript-eslint/parser',
+        parser: "@typescript-eslint/parser",
     },
-    extends: ['@nuxtjs/eslint-config-typescript', 'plugin:prettier/recommended'],
+    extends: ["@nuxt/eslint-config", "plugin:prettier/recommended"],
     plugins: [],
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -34,10 +34,5 @@ module.exports = {
         'vue/no-multiple-template-root': 'off',
         'vue/require-prop-types': 'off',
         'vue/no-v-model-argument': 'off',
-    },
-    settings: {
-        "import/resolver": {
-            typescript: {} // this loads <rootdir>/tsconfig.json to eslint
-        },
-    },
+    }
 }

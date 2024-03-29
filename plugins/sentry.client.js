@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       integrations: [
         new BrowserTracing({
           routingInstrumentation: Sentry.vueRouterInstrumentation(
-            nuxtApp.$router
+            nuxtApp.$router,
           ),
         }),
       ],
@@ -26,7 +26,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         if (event.exception)
           console.error(
             `[Exception handled by Sentry]: (${hint.originalException})`,
-            { event, hint }
+            { event, hint },
           );
 
         // Continue sending to Sentry
@@ -39,7 +39,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         trackComponents: true,
         timeout: 2000,
         hooks: ["activate", "mount", "update"],
-      })
+      }),
     );
     Sentry.attachErrorHandler(vueApp, {
       logErrors: false,
