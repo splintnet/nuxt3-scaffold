@@ -1,3 +1,5 @@
+import { defineNuxtPlugin } from "#app";
+
 import dayjs from "dayjs";
 import Notifications from "notiwind";
 

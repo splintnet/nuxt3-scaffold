@@ -1,3 +1,5 @@
+import { defineNuxtPlugin, useRuntimeConfig } from "#app";
+
 import * as Sentry from "@sentry/vue";
 import { BrowserTracing } from "@sentry/tracing";
 
