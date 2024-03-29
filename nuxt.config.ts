@@ -56,7 +56,7 @@ export default defineNuxtConfig({
         "@nuxtjs/tailwindcss",
         "@nuxt/content",
         "@pinia/nuxt",
-        "nuxt-simple-sitemap",
+        "@nuxtjs/sitemap",
         "nuxt-simple-robots",
         "@nuxtjs/eslint-module",
         "nuxt-icon",
